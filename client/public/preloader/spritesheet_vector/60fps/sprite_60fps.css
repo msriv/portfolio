@@ -1,0 +1,18 @@
+@keyframes play240 {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -1440px 0px;
+  }
+}
+.shapeshifter {
+  animation-duration: 4000ms;
+  animation-timing-function: steps(240);
+  width: 6px;
+  height: 6px;
+  background-repeat: no-repeat;
+}
+.shapeshifter.play {
+  animation-name: play240;
+}
