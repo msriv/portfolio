@@ -1,6 +1,12 @@
+import { Fragment } from 'react';
+import Navbar from '../../components/Navbar'
+
 const Blogs = () => {
     return (
-        <div>Blogs</div>
+        <Fragment>
+            <Navbar page={'blogs'} />
+            <div className="container">blogs</div>
+        </Fragment>
     )
 }
 
