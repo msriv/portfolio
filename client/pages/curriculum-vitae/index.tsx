@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import Navbar from "../../components/Navbar";
 import TopSection from "./TopSection";
 import SectionBlock from "./SectionBlock";
-import cvConfig from "./cvConfig";
+import cvConfig from "../../config/cvConfig";
 
 const CV = () => {
   return (
