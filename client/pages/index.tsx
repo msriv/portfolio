@@ -1,29 +1,56 @@
-import Navbar from '../components/Navbar'
-import Head from 'next/head'
-import { Fragment } from 'react'
+import Navbar from "../components/common/Navbar";
+import Hero from "../components/home/Hero";
+import UpdateList from "../components/home/UpdateList";
+import UpdateItem from "../components/home/UpdateItem";
+import ProjectList from "../components/home/ProjectList";
+import ProjectCard from "../components/home/ProjectCard";
+import { Updates, Projects } from "../components/Portfolio.data";
+import { ProjectInterface, UpdateInterface } from "../components/Interfaces";
+import ShortId from "shortid";
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <Fragment>
-      <Head>
-        <title>Mihir Srivastava</title>
-      </Head>
-      <Navbar page={"home"}/>
-      <div className="text-gray-700 body-font">
-      <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-        <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-          <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-teal-300">  Hi! I am Mihir Srivastava
-          </h1>
-          <p className="mb-8 leading-relaxed"></p>
-          <div className="flex justify-center">
-            <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-            <button className="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">Button</button>
-          </div>
-        </div>
-        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-          <img className="object-cover object-center rounded" alt="hero" src="/images/home.png" />
-        </div>
-      </div>
-      </div>
-    </Fragment>
-  )
+    <div className="w-8/12 mx-auto mt-6">
+      <Navbar>
+        <Link href="/">Home</Link>
+        <Link href="#projects">Work</Link>
+      </Navbar>
+      <Hero>
+        <span className="text-base font-bold uppercase">
+          Welcome to my portfolio 🚀
+        </span>
+        <h2 className="text-xl mt-4">
+          Mihir Srivastava here. Glad you're checking out my work. 😊
+        </h2>
+      </Hero>
+      <UpdateList>
+        {Updates.map((update: UpdateInterface) => {
+          return (
+            <UpdateItem
+              key={ShortId.generate()}
+              title={update.title}
+              date={update.dateCreated}
+              link={update.link}
+            />
+          );
+        })}
+      </UpdateList>
+      <ProjectList>
+        {Projects.map((project: ProjectInterface) => {
+          return (
+            <ProjectCard
+              key={ShortId.generate()}
+              link={project.link}
+              title={project.title}
+              slug={project.slug}
+              tags={project.tags}
+              tools={project.tools}
+              brief={project.brief}
+            />
+          );
+        })}
+      </ProjectList>
+    </div>
+  );
 }

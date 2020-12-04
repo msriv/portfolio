@@ -1,9 +1,13 @@
 @tailwind base;
 @tailwind components;
 
-body{
-    @apply bg-gray-900;
-    @apply text-white;
+body {
+  @apply bg-gray-900;
+  @apply text-white;
+}
+
+a {
+  @apply text-purple-600;
 }
 
 @tailwind utilities;

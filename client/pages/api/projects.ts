@@ -1,7 +1,24 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
+import axios from "axios";
 // TODO: Setup an API to fetch all projects from GraphCMS
-export default (req: any, res: any) => {
-  res.statusCode = 200;
-  res.json({ name: "John Doe" });
+export default async (req: any, res: any) => {
+  const { method } = req;
+
+  axios.defaults.baseURL = process.env.SERVER_REMOTE;
+
+  switch (method) {
+    case "POST":
+      {
+        const result = await axios.post("/", {
+          query: "{projects{id,title,projectThumbnail{url},breif,visible}}",
+        });
+        res.json(result.data);
+      }
+      break;
+    case "GET": {
+      res.status(405).json({ message: "Wrong request method" });
+    }
+    default: {
+      res.status(405).json({ message: "Wrong request method" });
+    }
+  }
 };
