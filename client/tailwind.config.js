@@ -2,7 +2,8 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: [],
+  purge: ["./pages/**/*.tsx", "./components/**/*.tsx"],
+  darkMode: false,
   theme: {
     colors: {
       gray: colors.trueGray,
