@@ -19,3 +19,13 @@ export interface ToolInterface {
   name: String;
   icon: String;
 }
+
+export interface PublicationInterface {
+  id: Number;
+  title: String;
+  conference: String;
+  conferenceLink: String;
+  paperLink: String;
+  downloadLink: String;
+  datePublished: String;
+}

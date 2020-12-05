@@ -1,14 +1,21 @@
 import Navbar from "../components/common/Navbar";
 import Hero from "../components/home/Hero";
-import UpdateList from "../components/home/UpdateList";
+import ListView from "../components/common/ListView";
 import UpdateItem from "../components/home/UpdateItem";
-import ProjectList from "../components/home/ProjectList";
+import GridView from "../components/common/GridView";
 import ProjectCard from "../components/home/ProjectCard";
-import { Updates, Projects } from "../components/Portfolio.data";
-import { ProjectInterface, UpdateInterface } from "../components/Interfaces";
+import PublicationItem from "../components/home/PublicationItem";
+import { Updates, Projects, Publications } from "../components/Portfolio.data";
+import {
+  ProjectInterface,
+  UpdateInterface,
+  PublicationInterface,
+} from "../components/Interfaces";
 import ShortId from "shortid";
 import Link from "next/link";
 import Head from "next/head";
+import _ from "lodash";
+import Footer from "../components/home/Footer";
 
 export default function Home() {
   return (
@@ -19,7 +26,7 @@ export default function Home() {
       <div className="w-8/12 mx-auto mt-6">
         <Navbar>
           <Link href="/">Home</Link>
-          <Link href="#projects">Work</Link>
+          <Link href="/about">About Me 👨🏽</Link>
         </Navbar>
         <Hero>
           <span className="text-base font-bold uppercase">
@@ -29,8 +36,8 @@ export default function Home() {
             Mihir Srivastava here. Glad you're checking out my work. 😊
           </h2>
         </Hero>
-        <UpdateList>
-          {Updates.map((update: UpdateInterface) => {
+        <ListView title="Latest Updates 💡">
+          {_.sortBy(Updates, ["dateCreated"]).map((update: UpdateInterface) => {
             return (
               <UpdateItem
                 key={ShortId.generate()}
@@ -40,8 +47,8 @@ export default function Home() {
               />
             );
           })}
-        </UpdateList>
-        <ProjectList>
+        </ListView>
+        <GridView title="Projects 👾">
           {Projects.map((project: ProjectInterface) => {
             return (
               <ProjectCard
@@ -55,7 +62,23 @@ export default function Home() {
               />
             );
           })}
-        </ProjectList>
+        </GridView>
+        <ListView title="IEEE Publications 📃">
+          {Publications.map((publication: PublicationInterface) => {
+            return (
+              <PublicationItem
+                key={ShortId.generate()}
+                title={publication.title}
+                conference={publication.conference}
+                conferenceLink={publication.conferenceLink}
+                paperLink={publication.paperLink}
+                downloadLink={publication.downloadLink}
+                datePublished={publication.datePublished}
+              />
+            );
+          })}
+        </ListView>
+        <Footer />
       </div>
     </>
   );

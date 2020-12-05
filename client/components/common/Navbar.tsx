@@ -3,7 +3,7 @@ const Navbar = ({ children }: any) => {
     <>
       <div className="flex justify-between items-center">
         <img className="w-8 h-8" src={`./apple-touch-icon.png`} />
-        <div className="flex w-36 justify-between">{children}</div>
+        <div className="flex w-48 justify-between">{children}</div>
       </div>
     </>
   );

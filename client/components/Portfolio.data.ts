@@ -36,8 +36,21 @@ export const Projects = [
     brief:
       "Use of renewable energy resources to generate electricity to use as an alternative power supply.",
     tags: ["#internetofthings"],
-    tools: ["Node.js", "Blynk"],
+    tools: ["Node.js", "Javascript"],
     link: "foo.com",
+  },
+];
+
+export const Publications = [
+  {
+    id: 1,
+    title:
+      "Modeling the Impact of a Non-Ohmic Contact on the Delay of Complementary OTFT Inverters",
+    conference: "ICDCS",
+    conferenceLink: "https://www.karunya.edu/dece/icdcs20/",
+    paperLink: "https://ieeexplore.ieee.org/abstract/document/9075743",
+    downloadLink: "/cheralathan2020.pdf",
+    datePublished: "2020-09-10",
   },
 ];
 
