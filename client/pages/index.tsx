@@ -60,6 +60,7 @@ export default function Home() {
                 tags={project.tags}
                 tools={project.tools}
                 brief={project.brief}
+                body={project.body}
               />
             );
           })}
