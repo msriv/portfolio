@@ -44,6 +44,7 @@ export default function Home() {
                 title={update.title}
                 date={update.dateCreated}
                 link={update.link}
+                body={update.body}
               />
             );
           })}

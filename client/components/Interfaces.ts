@@ -3,6 +3,7 @@ export interface UpdateInterface {
   title: String;
   dateCreated: String;
   link: String;
+  body: String;
 }
 
 export interface ProjectInterface {
@@ -13,6 +14,7 @@ export interface ProjectInterface {
   tags: String[];
   tools?: String[];
   link: String;
+  body: String;
 }
 
 export interface ToolInterface {

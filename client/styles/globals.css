@@ -8,6 +8,12 @@ body {
 
 a {
   @apply text-purple-600;
+  @apply cursor-pointer;
+  @apply transition duration-500 ease-in-out hover:text-purple-400;
+}
+
+.ReactModal__Content {
+  @apply bg-gray-900;
 }
 
 @tailwind utilities;

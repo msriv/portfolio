@@ -15,6 +15,13 @@
     "next-svgr": "^0.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-katex": "^2.0.2",
+    "react-markdown": "^5.0.3",
+    "react-modal": "^3.12.1",
+    "react-syntax-highlighter": "^15.4.3",
+    "remark-gfm": "^1.0.0",
+    "remark-math": "^4.0.0",
+    "sass": "^1.30.0",
     "shortid": "^2.2.15",
     "string-to-color": "^2.2.2",
     "typeface-poppins": "^0.0.72"

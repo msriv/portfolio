@@ -5,9 +5,12 @@ export const Projects = [
     title: "ListWebinars",
     brief:
       "ListWebinars provides a curated list of webinars happening across the world.",
-    tags: ["#web"],
+    tags: ["#webapp"],
     tools: ["Typescript"],
     link: "foo.com",
+    body: `ListWebinars is a project
+      ## A new heading for this project.
+    `,
   },
   {
     id: 2,
@@ -18,6 +21,9 @@ export const Projects = [
     tags: ["#android"],
     tools: ["Android", "Java", "PHP"],
     link: "foo.com",
+    body: `Avantika Alumni is a project
+      ## A new heading for this project.
+    `,
   },
   {
     id: 3,
@@ -28,6 +34,9 @@ export const Projects = [
     tags: ["#internetofthings"],
     tools: ["Node.js", "Blynk"],
     link: "foo.com",
+    body: `Smart Grid is a project
+      ## A new heading for this project.
+    `,
   },
   {
     id: 3,
@@ -38,6 +47,9 @@ export const Projects = [
     tags: ["#internetofthings"],
     tools: ["Node.js", "Javascript"],
     link: "foo.com",
+    body: `Smart Grid is a project
+      ## A new heading for this project.
+    `,
   },
 ];
 
@@ -75,18 +87,21 @@ export const Updates = [
     title: "Defining the role of community for ListWebinars",
     dateCreated: "2020-09-10",
     link: "foo.com",
+    body: `I have been working on the community aspect of ListWebinars for a couple of days now. Its really interesting you get to understand what it is to work with people and shit like that.`,
   },
   {
     id: 2,
     title: "Learning about Go to develop performance-driven REST APIs",
     dateCreated: "2020-09-30",
     link: "foo.com",
+    body: `Learnt that Go is **good for performance** on server side applications as it allows us to develop the applications statically.`,
   },
   {
     id: 3,
     title: "Got my PPO with Slang Labs",
     dateCreated: "2020-10-11",
     link: "foo.com",
+    body: `I am so excited. **Damn!**. So I finally received my PPO from Slang Labs. This is the start up where I did my previous 3 month internship. That experience is something that I can actually mark on a graph saying that it has helped me grow. And if I was here, after working at Slang I am here.  `,
   },
 ];
 
