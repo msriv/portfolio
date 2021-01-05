@@ -1,5 +1,6 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { InlineMath, BlockMath } from "react-katex";
+import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import math from "remark-math";
 import "katex/dist/katex.min.css";
 
@@ -27,7 +28,7 @@ export const Headers = ({ level, children }: any) => {
 };
 
 export const Code = ({ language, value }) => (
-  <SyntaxHighlighter language={language} children={value} />
+  <SyntaxHighlighter style={dark} language={language} children={value} />
 );
 export const MathInline = ({ value }) => <InlineMath math={value} />;
 export const MathBlock = ({ value }) => <BlockMath math={value} />;

@@ -48,7 +48,9 @@ export const Projects = [
     tools: ["Node.js", "Javascript"],
     link: "foo.com",
     body: `Smart Grid is a project
-      ## A new heading for this project.
+      \`\`\`js
+        console.log('hello')
+      \`\`\`
     `,
   },
 ];

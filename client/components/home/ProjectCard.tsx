@@ -29,7 +29,7 @@ const ProjectCard = ({ title, slug, brief, tools, tags, link, body }) => {
     <>
       <div
         onClick={handleClick}
-        className="transition duration-500 ease-in-out flex cursor-pointer flex-col max-w-sm mx-auto bg-gray-800 shadow-lg rounded-lg overflow-hidden pb-4 w-11/12 hover:bg-gray-700"
+        className="transition duration-500 ease-in-out flex cursor-pointer flex-col max-w-sm mx-auto bg-gray-800 hover:shadow-lg rounded-lg overflow-hidden pb-4 w-11/12 hover:bg-gray-700"
       >
         <div className="flex-grow pt-6 px-6">
           <div className="inline-flex justify-between w-full">

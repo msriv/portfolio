@@ -18,68 +18,87 @@ import _ from "lodash";
 import Footer from "../components/home/Footer";
 
 export default function Home() {
+  const DayList = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
   return (
     <>
       <Head>
-        <title>Mihir Srivastava</title>
+        <title>Home</title>
       </Head>
-      <div className="w-8/12 mx-auto mt-6">
-        <Navbar>
-          <Link href="/">Home</Link>
-          <Link href="/about">About Me 👨🏽</Link>
-        </Navbar>
+      <div className="w-8/12 mx-auto mt-10">
+        <Navbar />
         <Hero>
-          <span className="text-base font-bold uppercase">
-            Welcome to my portfolio 🚀
+          <span className="text-2xl">
+            Hey! Welcome to my portfolio. How’s your{" "}
+            {DayList[new Date().getDay().toLocaleString("en-IN")]} going?
           </span>
-          <h2 className="text-xl mt-4">
-            Mihir Srivastava here. Glad you're checking out my work. 😊
-          </h2>
         </Hero>
-        <ListView title="Latest Updates 💡">
-          {_.sortBy(Updates, ["dateCreated"]).map((update: UpdateInterface) => {
-            return (
-              <UpdateItem
-                key={ShortId.generate()}
-                title={update.title}
-                date={update.dateCreated}
-                link={update.link}
-                body={update.body}
-              />
-            );
-          })}
-        </ListView>
-        <GridView title="Projects 👾">
-          {Projects.map((project: ProjectInterface) => {
-            return (
-              <ProjectCard
-                key={ShortId.generate()}
-                link={project.link}
-                title={project.title}
-                slug={project.slug}
-                tags={project.tags}
-                tools={project.tools}
-                brief={project.brief}
-                body={project.body}
-              />
-            );
-          })}
+        <GridView>
+          {/* About Me */}
+          <Link href="/about">
+            <div className="cursor-pointer transition duration-500 ease-in-out hover:shadow-lg hover:text-amber-500 bg-blueGray-900 rounded-lg flex flex-col space-y-10 items-center p-6">
+              <img src="/images/hey.svg" className=" object-contain h-56" />
+              <span className="font-bold text-xl">About Me</span>
+            </div>
+          </Link>
+          {/* Projects
+          <Link href="/projects">
+          <div className="cursor-pointer transition duration-500 ease-in-out hover:shadow-lg hover:text-amber-500 bg-blueGray-900 rounded-lg flex flex-col space-y-10 items-center p-6" >
+            <img src="/images/projects.svg" className=" object-contain h-56"/>
+            <span className="font-bold text-xl">Projects</span>
+          </div>
+          </Link> */}
+          {/* Curriculum Vitae */}
+          <Link href="/curriculum-vitae" as="/curriculum-vitae">
+            <div className="transition duration-500 ease-in-out hover:shadow-lg hover:text-amber-500 cursor-pointer bg-blueGray-900 rounded-lg flex flex-col space-y-10 items-center p-6">
+              <img src="/images/cv.svg" className=" object-contain h-56" />
+              <span className="font-bold text-xl">Curriculum Vitae</span>
+            </div>
+          </Link>
+          {/* Research
+          <Link href="/curriculum-vitae" as="/curriculum-vitae">
+          <div className="transition duration-500 ease-in-out hover:shadow-lg hover:text-amber-500 cursor-pointer bg-blueGray-900 rounded-lg flex flex-col space-y-10 items-center p-6" >
+            <img src="/images/research.svg" className=" object-contain h-56"/>
+            <span className="font-bold text-xl">Research Papers</span>
+          </div>
+          </Link>
+          ADS.COM
+          <Link href="/curriculum-vitae" as="/curriculum-vitae">
+          <div className="transition duration-500 ease-in-out hover:shadow-lg hover:text-amber-500 cursor-pointer bg-blueGray-900 rounded-lg flex flex-col space-y-10 items-center p-6" >
+            <img src="/images/adscom.png" className=" object-contain h-56"/>
+            <span className="font-bold text-xl">ADS.COM</span>
+          </div>
+          </Link> */}
+          {/* Books
+          <Link href="/curriculum-vitae" as="/curriculum-vitae">
+          <div className="transition duration-500 ease-in-out hover:shadow-lg hover:text-amber-500 cursor-pointer bg-blueGray-900 rounded-lg flex flex-col space-y-10 items-center p-6" >
+            <img src="/images/books.svg" className=" object-contain h-56"/>
+            <span className="font-bold text-xl">Books</span>
+          </div>
+          </Link>
+           Shows 
+          <Link href="/curriculum-vitae" as="/curriculum-vitae">
+          <div className="transition duration-500 ease-in-out hover:shadow-lg hover:text-amber-500 cursor-pointer bg-blueGray-900 rounded-lg flex flex-col space-y-10 items-center p-6" >
+            <img src="/images/shows.svg" className=" object-contain h-56"/>
+            <span className="font-bold text-xl">Shows</span>
+          </div> 
+          </Link>*/}
+          {/* Collaboration */}
+          <Link href="/collaborate">
+            <div className="transition duration-500 ease-in-out hover:shadow-lg hover:text-amber-500 cursor-pointer bg-blueGray-900 rounded-lg flex flex-col space-y-10 items-center p-6">
+              <img src="/images/collab.svg" className=" object-contain h-56" />
+              <span className="font-bold text-xl">Collab with me</span>
+            </div>
+          </Link>
         </GridView>
-        <ListView title="IEEE Publications 📃">
-          {Publications.map((publication: PublicationInterface) => {
-            return (
-              <PublicationItem
-                key={ShortId.generate()}
-                title={publication.title}
-                conference={publication.conference}
-                conferenceLink={publication.conferenceLink}
-                paperLink={publication.paperLink}
-                downloadLink={publication.downloadLink}
-                datePublished={publication.datePublished}
-              />
-            );
-          })}
-        </ListView>
         <Footer />
       </div>
     </>

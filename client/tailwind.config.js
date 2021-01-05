@@ -6,10 +6,12 @@ module.exports = {
   darkMode: false,
   theme: {
     colors: {
+      blueGray: colors.blueGray,
       gray: colors.trueGray,
       teal: colors.teal,
       white: colors.white,
       purple: colors.purple,
+      amber: colors.amber,
     },
     extend: {
       fontFamily: {

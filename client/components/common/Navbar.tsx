@@ -1,9 +1,8 @@
-const Navbar = ({ children }: any) => {
+const Navbar = () => {
   return (
     <>
-      <div className="flex justify-between items-center">
-        <img className="w-8 h-8" src={`./apple-touch-icon.png`} />
-        <div className="flex w-48 justify-between">{children}</div>
+      <div className="flex justify-center items-center text-6xl font-bold">
+        Mihir Srivastava
       </div>
     </>
   );
